@@ -48,4 +48,4 @@ library(magrittr)
 tidy_set <- data[ , grepl( "activity|mean" , names(data) ) ]
 tidy_set <- aggregate(tidy_set[, 3:68], list(tidy_set$Activity, tidy_set$subject), mean)
 colnames(tidy_set)[1:2] <- c("Activity", "Subject")
-write.csv(tidy_set, file = "tidy_set.csv")
+write.table(tidy_set, file = "tidy_set.txt", row.names = FALSE)
